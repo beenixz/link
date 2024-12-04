@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>송지율의 여러가지 약물탐색</title>
+    <link rel="stylesheet" href="지율.css">
+</head>
+<body>
+    <h1>송지율의 여러가지 약물탐색</h1>
+    <div class="search-container">
+        <input type="text" id="drugName" placeholder="약물 이름을 입력하세요" oninput="autocomplete()">
+        <button onclick="getDrugInfo()">검색</button>
+    </div>
+    <div id="suggestions" style="display: none;"></div>
+    
+    <div id="result"></div>
+
+    <footer>
+        <div class="language-selector">
+            <label for="languageSelect">언어 선택:</label>
+            <select id="languageSelect" onchange="changeLanguage()">
+                <option value="ko">한국어</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+    </footer>
+
+    <script src="지율.js"></script>
+</body>
+</html>

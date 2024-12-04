@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로봇 소개 페이지</title>
+    <link rel="stylesheet" href="재헌.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>김재헌의 로봇 소개 페이지</h1>
+    </header>
+    <main>
+        <div class="robot-card" id="roomba">
+            <h2>iRobot Roomba 980</h2>
+            <p>최신 스마트 청소 기능을 갖춘 로봇 청소기입니다.</p>
+            <button onclick="showDetails('roomba')">자세히 보기</button>
+        </div>
+        <div class="robot-card" id="neato">
+            <h2>Neato Botvac D7</h2>
+            <p>레이저 네비게이션으로 효율적인 청소를 제공합니다.</p>
+            <button onclick="showDetails('neato')">자세히 보기</button>
+        </div>
+        <div class="robot-card" id="ecovacs">
+            <h2>Ecovacs Deebot Ozmo T8</h2>
+            <p>청소와 물걸레 기능을 동시에 제공하는 로봇입니다.</p>
+            <button onclick="showDetails('ecovacs')">자세히 보기</button>
+        </div>
+        <div class="robot-card" id="roborock">
+            <h2>Roborock S6 MaxV</h2>
+            <p>고급 AI 기술로 장애물을 피하는 로봇 청소기입니다.</p>
+            <button onclick="showDetails('roborock')">자세히 보기</button>
+        </div>
+        <div class="robot-card" id="bostonDynamics">
+            <h2>Boston Dynamics Spot</h2>
+            <p>다양한 환경에서 작업할 수 있는 로봇 개입니다.</p>
+            <button onclick="showDetails('bostonDynamics')">자세히 보기</button>
+        </div>
+        <div class="robot-card" id="ubtech">
+            <h2>UBTech Jimu Robot</h2>
+            <p>코딩 교육을 위한 조립식 로봇입니다.</p>
+            <button onclick="showDetails('ubtech')">자세히 보기</button>
+        </div>
+        <div class="robot-card" id="sphero">
+            <h2>Sphero Mini</h2>
+            <p>스마트폰으로 조정 가능한 미니 로봇입니다.</p>
+            <button onclick="showDetails('sphero')">자세히 보기</button>
+        </div>
+        <div class="robot-card" id="miko">
+            <h2>Miko 3</h2>
+            <p>어린이를 위한 AI 로봇으로 교육 및 놀이 기능이 있습니다.</p>
+            <button onclick="showDetails('miko')">자세히 보기</button>
+        </div>
+        <div class="robot-card" id="dji">
+            <h2>DJI RoboMaster S1</h2>
+            <p>교육용 로봇으로 코딩과 게임 기능을 제공합니다.</p>
+            <button onclick="showDetails('dji')">자세히 보기</button>
+        </div>
+    </main>
+    <div id="details" class="modal">
+        <span class="close" onclick="closeDetails()">&times;</span>
+        <h2 id="robotName"></h2>
+        <p id="robotDescription"></p>
+    </div>
+    <script src="재헌.js"></script>
+</body>
+</html>

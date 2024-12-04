@@ -1,0 +1,73 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #2c3e50; /* 어두운 배경 */
+    color: #ecf0f1; /* 밝은 글자색 */
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: #34495e; /* 배경 색상 */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border: 2px solid #ecf0f1; /* 경계선 */
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    border-bottom: 2px solid #ecf0f1; /* 아래 경계 */
+    padding-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+input {
+    width: calc(100% - 4px); /* 경계선 두께를 감안한 너비 */
+    padding: 10px; /* 패딩 조정 */
+    margin-top: 5px;
+    border: 2px solid #ecf0f1; /* 경계선 */
+    border-radius: 5px;
+    background-color: #2c3e50; /* 입력창 배경 */
+    color: #ecf0f1; /* 입력창 글자색 */
+    font-size: 16px;
+    box-sizing: border-box; /* 패딩과 경계선 포함한 크기 조정 */
+}
+
+input:focus {
+    outline: none; /* 기본 테두리 없애기 */
+    border: 2px solid #3498db; /* 포커스 시 테두리 색상 */
+    background-color: #1abc9c; /* 포커스 시 배경 색상 */
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e67e22; /* 버튼 색상 */
+    color: #ecf0f1; /* 버튼 글자색 */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* 배경 색상 전환 효과 */
+}
+
+button:hover {
+    background-color: #d35400; /* 호버 시 색상 변화 */
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 20px;
+    border-top: 2px solid #ecf0f1; /* 위 경계 */
+    padding-top: 10px;
+}
+

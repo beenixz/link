@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강초현의 진로 추천 시스템</title>
+    <link rel="stylesheet" href="초현.css">
+</head>
+<body>
+    <div class="container">
+        <h1>강초현의 진로 추천 시스템</h1>
+        <p>자신의 장단점, 특기, 관심 분야를 입력하고 맞춤형 직업을 찾아보세요!</p>
+
+        <div id="inputSection">
+            <h2>자신에 대한 정보 입력</h2>
+            <div class="input-group">
+                <label for="strengths">장점</label>
+                <textarea id="strengths" placeholder="당신의 장점을 입력하세요..."></textarea>
+            </div>
+            <div class="input-group">
+                <label for="weaknesses">단점</label>
+                <textarea id="weaknesses" placeholder="당신의 단점을 입력하세요..."></textarea>
+            </div>
+            <div class="input-group">
+                <label for="skills">특기</label>
+                <input type="text" id="skills" placeholder="당신의 특기를 입력하세요...">
+            </div>
+        </div>
+
+        <div id="quizSection">
+            <h2>관심 분야 퀴즈</h2>
+            <p>아래의 질문에 답하세요. 당신의 관심 분야를 파악하여 맞춤형 직업을 추천해 드립니다.</p>
+            <form id="quizForm">
+                <div class="question">
+                    <p>1. 어떤 주제에 가장 관심이 있나요?</p>
+                    <label><input type="radio" name="question1" value="과학" required> 과학</label>
+                    <label><input type="radio" name="question1" value="예술"> 예술</label>
+                    <label><input type="radio" name="question1" value="기술"> 기술</label>
+                    <label><input type="radio" name="question1" value="사회"> 사회</label>
+                </div>
+                <div class="question">
+                    <p>2. 어떤 유형의 작업을 좋아하나요?</p>
+                    <label><input type="radio" name="question2" value="창의적" required> 창의적인 작업</label>
+                    <label><input type="radio" name="question2" value="분석적"> 분석적인 작업</label>
+                    <label><input type="radio" name="question2" value="실용적"> 실용적인 작업</label>
+                    <label><input type="radio" name="question2" value="협력적"> 협력적인 작업</label>
+                </div>
+                <div class="question">
+                    <p>3. 어떤 환경에서 일하는 것을 선호하나요?</p>
+                    <label><input type="radio" name="question3" value="실외" required> 실외</label>
+                    <label><input type="radio" name="question3" value="사무실"> 사무실</label>
+                    <label><input type="radio" name="question3" value="자유로운"> 자유로운</label>
+                    <label><input type="radio" name="question3" value="팀워크"> 팀워크 중심</label>
+                </div>
+                <div class="question">
+                    <p>4. 어떤 문제 해결 방식을 선호하나요?</p>
+                    <label><input type="radio" name="question4" value="창의적" required> 창의적</label>
+                    <label><input type="radio" name="question4" value="논리적"> 논리적</label>
+                    <label><input type="radio" name="question4" value="실용적"> 실용적</label>
+                    <label><input type="radio" name="question4" value="감정적"> 감정적</label>
+                </div>
+                <button type="submit">퀴즈 결과 보기</button>
+            </form>
+        </div>
+
+        <div id="recommendations" class="hidden">
+            <h2>추천 직업</h2>
+            <p>당신의 관심 분야에 맞는 직업을 아래에서 확인하세요!</p>
+            <ul id="jobList"></ul>
+            <button id="retryButton">다시 시도하기</button>
+        </div>
+    </div>
+
+    <script src="초현.js"></script>
+</body>
+</html>

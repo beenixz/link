@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최진솔의 세계 시간 및 날씨 변환기</title>
+    <link rel="stylesheet" href="진솔.css">
+</head>
+<body>
+    <div class="container">
+        <h1>최진솔의 세계 시간 및 날씨 변환기</h1>
+        <div>
+            <label for="timezone">시간대 선택:</label>
+            <select id="timezone">
+                <option value="UTC">UTC</option>
+                <option value="GMT">GMT</option>
+                <option value="Asia/Seoul">서울 (KST)</option>
+                <option value="Asia/Tokyo">도쿄 (JST)</option>
+                <option value="Asia/Shanghai">상하이 (CST)</option>
+                <option value="Asia/Hong_Kong">홍콩 (HKT)</option>
+                <option value="America/New_York">뉴욕 (EST)</option>
+                <option value="America/Los_Angeles">로스앤젤레스 (PST)</option>
+                <option value="America/Chicago">시카고 (CST)</option>
+                <option value="Europe/London">런던 (GMT)</option>
+                <option value="Europe/Berlin">베를린 (CET)</option>
+                <option value="Europe/Paris">파리 (CET)</option>
+                <option value="Europe/Moscow">모스크바 (MSK)</option>
+                <option value="Australia/Sydney">시드니 (AEDT)</option>
+                <option value="Africa/Johannesburg">요하네스버그 (SAST)</option>
+                <option value="Asia/Dubai">두바이 (GST)</option>
+                <option value="Asia/Kolkata">뭄바이 (IST)</option>
+                <option value="Pacific/Auckland">오클랜드 (NZDT)</option>
+                <option value="America/Sao_Paulo">상파울루 (BRT)</option>
+                <option value="America/Toronto">토론토 (EST)</option>
+                <option value="America/Argentina/Buenos_Aires">부에노스아이레스 (ART)</option>
+                <option value="Asia/Singapore">싱가포르 (SGT)</option>
+                <option value="Asia/Bangkok">방콕 (ICT)</option>
+                <option value="Asia/Jakarta">자카르타 (WIB)</option>
+                <option value="Asia/Manila">마닐라 (PHT)</option>
+                <option value="Europe/Rome">로마 (CET)</option>
+                <option value="Europe/Madrid">마드리드 (CET)</option>
+                <option value="Europe/Brussels">브뤼셀 (CET)</option>
+                <option value="Europe/Amsterdam">암스테르담 (CET)</option>
+                <option value="Europe/Zurich">취리히 (CET)</option>
+                <option value="America/Los_Angeles">샌프란시스코 (PST)</option>
+                <option value="Australia/Perth">퍼스 (AWST)</option>
+                <option value="Pacific/Honolulu">호놀룰루 (HST)</option>
+                <option value="America/Caracas">카라카스 (VET)</option>
+                <option value="America/Edmonton">에드먼턴 (MST)</option>
+                <option value="America/Regina">리자이나 (CST)</option>
+                <option value="Asia/Colombo">콜롬보 (IST)</option>
+                <option value="Asia/Almaty">알마티 (ALMT)</option>
+                <option value="Asia/Tashkent">타슈켄트 (UZT)</option>
+                <option value="Asia/Yekaterinburg">예카테린부르크 (YEKT)</option>
+                <option value="Asia/Vladivostok">블라디보스토크 (VLAT)</option>
+            </select>
+            <button id="getTimeButton">현재 시간 보기</button>
+        </div>
+        <div>
+            <label for="city">도시 입력:</label>
+            <input type="text" id="city" placeholder="도시 이름">
+            <button id="getWeatherButton">날씨 보기</button>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script src="진솔.js"></script>
+</body>
+</html>

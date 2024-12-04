@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>류현서의 한국어-일본어 실시간 번역기</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        textarea {
+            width: 100%;
+            max-width: 600px;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            resize: none;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>류현서의 한국어를 일본어로 실시간 번역하기</h1>
+    <textarea id="input" placeholder="여기에 한국어를 입력하세요..."></textarea>
+    <div id="output"></div>
+
+    <script>
+        let timeoutId;
+
+        document.getElementById('input').addEventListener('input', function() {
+            clearTimeout(timeoutId);
+            const text = this.value;
+
+            timeoutId = setTimeout(() => {
+                if (text) {
+                    translateText(text);
+                } else {
+                    document.getElementById('output').innerText = ''; // 아무것도 출력되지 않도록 설정
+                }
+            }, 300); // 300ms 후에 번역 실행
+        });
+
+        async function translateText(text) {
+            const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=ko|ja`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                const translatedText = data.responseData.translatedText;
+                document.getElementById('output').innerText = '일본어 번역: ' + translatedText;
+            } catch (error) {
+                console.error('번역 오류:', error);
+            }
+        }
+    </script>
+</body>
+</html>

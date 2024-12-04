@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박서율의 전기 요금 계산기</title>
+    <link rel="stylesheet" href="서율.css">
+</head>
+<body>
+    <div class="container">
+        <h1>박서율의 전기 요금 계산기</h1>
+        <label for="consumption">전력 소비량 (kWh):</label>
+        <input type="number" id="consumption" required>
+        
+        <button onclick="calculate()">계산하기</button>
+        
+        <h2>결과</h2>
+        <p id="basicCharge">기본 요금: </p>
+        <p id="tax">세금: </p>
+        <p id="totalCharge">최종 요금: </p>
+    </div>
+    <script src="서율.js"></script>
+</body>
+</html>

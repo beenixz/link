@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이현서의 여행지 추천 홈페이지</title>
+    <link rel="stylesheet" href="이현서.css">
+</head>
+<body>
+    <header>
+        <h1>이현서의 여행지 추천 홈페이지</h1>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="여행지 검색...">
+            <button onclick="searchDestinations()">검색</button>
+        </div>
+    </header>
+    
+    <main>
+        <h2>인기 여행지</h2>
+        <div id="popular-destinations" class="destination-list"></div>
+        
+        <h2>추천 코스</h2>
+        <div id="recommended-routes" class="route-list"></div>
+    </main>
+
+    <footer>
+        <p>© 2024 lee hyun seo</p>
+    </footer>
+
+    <script src="이현서.js"></script>
+</body>
+</html>

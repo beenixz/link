@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과목 세부 특기사항</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #eaeaea;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #333;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #f5f5f5;
+            border: 2px dashed #bbb;
+            border-radius: 10px;
+            z-index: -1;
+            animation: backgroundAnimation 5s infinite alternate;
+        }
+        @keyframes backgroundAnimation {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.02); }
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #4a4a4a;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            position: relative;
+            z-index: 1;
+        }
+        li {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: appear 0.5s forwards;
+            margin: 15px 0;
+        }
+        @keyframes appear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        li:nth-child(1) { animation-delay: 0.2s; }
+        li:nth-child(2) { animation-delay: 0.4s; }
+        li:nth-child(3) { animation-delay: 0.6s; }
+        li:nth-child(4) { animation-delay: 0.8s; }
+        li:nth-child(5) { animation-delay: 1s; }
+        li:nth-child(6) { animation-delay: 1.2s; }
+        li:nth-child(7) { animation-delay: 1.4s; }
+        li:nth-child(8) { animation-delay: 1.6s; }
+        li:nth-child(9) { animation-delay: 1.8s; }
+        li:nth-child(10) { animation-delay: 2s; }
+        li:nth-child(11) { animation-delay: 2.2s; }
+        a {
+            display: block;
+            padding: 12px 20px;
+            background-color: #ffcc80;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            font-size: 1.2em;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        a:hover {
+            background-color: #ffb74d;
+            transform: scale(1.05);
+        }
+        @keyframes penAnimation {
+            0% { transform: rotate(0); }
+            50% { transform: rotate(10deg); }
+            100% { transform: rotate(0); }
+        }
+        a::after {
+            content: '✍️';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+            animation: penAnimation 1s infinite;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Production program </h1>
+        <ul>
+            <li><a href="초현.html">강초현의 진로 설문조사</a></li>
+            <li><a href="은설.html">김은설의 나만의 유튜브</a></li>
+            <li><a href="재헌.html">김재헌의 로봇 소개</a></li>
+            <li><a href="희성.html">김희성의 불 피하기</a></li>
+            <li><a href="류현서.html">류현서의 번역기</a></li>
+            <li><a href="서율.html">박서율의 전기 요금 계산기</a></li>
+            <li><a href="지율.html">송지율의 약 검색</a></li>
+            <li><a href="유빈.html">신유빈의 패션 추천</a></li>
+            <li><a href="성민.html">유성민의 MBTI</a></li>
+            <li><a href="이현서.html">이현서의 여행지 추천</a></li>
+            <li><a href="진솔.html">최진솔의 무언가</a></li>
+        </ul>
+        <footer>© KIM HEE SEONG.</footer>
+    </div>
+</body>
+</html>

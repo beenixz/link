@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성미니의 MBTI 검사기</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #4a90e2;
+        }
+        #start-button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #start-button:hover {
+            background-color: #357ab8;
+        }
+        #question-container {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .question {
+            font-size: 1.5em;
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #4a90e2;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #357ab8;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #4a90e2;
+        }
+    </style>
+</head>
+<body>
+    <h1>성민이의 MBTI 검사기</h1>
+    <button id="start-button">검사 시작하기</button>
+
+    <div id="question-container">
+        <div class="question" id="question"></div>
+        <button id="yes-button">예</button>
+        <button id="no-button">아니오</button>
+    </div>
+
+    <div id="result"></div>
+
+    <script>
+        const questions = [
+            "사람들과의 대화에서 에너지를 얻는 편인가요?",
+            "새로운 사람을 만나는 것이 즐겁나요?",
+            "상상력과 아이디어를 중요하게 생각하나요?",
+            "구체적이고 실용적인 정보를 선호하나요?",
+            "계획을 세우고 그 계획에 따라 행동하는 것을 선호하나요?",
+            "즉흥적으로 행동하는 것이 더 편한가요?",
+            "사실과 데이터에 기반하여 결정을 내리는 것을 선호하나요?",
+            "감정적으로 연결된 사람들과의 관계를 중요하게 생각하나요?"
+        ];
+
+        let currentQuestion = 0;
+        let eScore = 0;
+        let nScore = 0;
+        let jScore = 0;
+        let tScore = 0;
+
+        document.getElementById('start-button').addEventListener('click', startQuiz);
+
+        function startQuiz() {
+            currentQuestion = 0;
+            eScore = 0;
+            nScore = 0;
+            jScore = 0;
+            tScore = 0;
+            document.getElementById('result').innerText = '';
+            document.getElementById('question-container').style.display = 'block';
+            showQuestion();
+        }
+
+        function showQuestion() {
+            if (currentQuestion < questions.length) {
+                document.getElementById('question').innerText = questions[currentQuestion];
+            } else {
+                calculateResult();
+            }
+        }
+
+        document.getElementById('yes-button').addEventListener('click', () => answerQuestion(true));
+        document.getElementById('no-button').addEventListener('click', () => answerQuestion(false));
+
+        function answerQuestion(isYes) {
+            if (currentQuestion < 2) {
+                if (isYes) eScore++;
+            } else if (currentQuestion < 4) {
+                if (isYes) nScore++;
+            } else if (currentQuestion < 6) {
+                if (isYes) jScore++;
+            } else {
+                if (isYes) tScore++;
+            }
+            currentQuestion++;
+            showQuestion();
+        }
+
+        function calculateResult() {
+            let mbtiType = "";
+            mbtiType += eScore > 1 ? "E" : "I";
+            mbtiType += nScore > 0 ? "N" : "S";
+            mbtiType += tScore < 2 ? "F" : "T";
+            mbtiType += jScore < 1 ? "P" : "J";
+
+            document.getElementById('result').innerText = `당신의 MBTI 유형은: ${mbtiType}입니다.`;
+            document.getElementById('question-container').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

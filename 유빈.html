@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신유빈의 패션 추천기</title>
+    <link rel="stylesheet" href="유빈.css">
+</head>
+<body>
+    <div class="container">
+        <h1>신유빈의 패션 추천기</h1>
+        <form id="fashion-form">
+            <label for="user_name">이름:</label>
+            <input type="text" id="user_name" required placeholder="이름을 입력하세요">
+            
+            <label for="body_type">신체 유형 (슬림/통통):</label>
+            <select id="body_type" required>
+                <option value="">선택하세요</option>
+                <option value="슬림">슬림</option>
+                <option value="통통">통통</option>
+            </select>
+            
+            <label for="favorite_colors">선호 색상 (쉼표로 구분):</label>
+            <input type="text" id="favorite_colors" required placeholder="예: 검정, 화이트">
+            
+            <button type="submit">추천 받기</button>
+        </form>
+
+        <h2 id="recommendation-title" style="display:none;"></h2>
+        <ul id="recommendations" class="recommendations"></ul>
+    </div>
+
+    <script src="유빈.js"></script>
+</body>
+</html>
